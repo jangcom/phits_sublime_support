@@ -3,7 +3,10 @@
 # Look at the README.md for info
 
 name: PHITS input
-file_extensions: [inp]
+file_extensions:
+  - inp
+  - out
+  - ang
 scope: input.phits
 contexts:
   main:
