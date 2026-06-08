@@ -9,11 +9,11 @@ contexts:
   main:
 
     # Parameters
-    - match: '(?i)[a-z()0-9<>-]+\s+(?=\=)|infl:'
+    - match: '(?i)[a-z()0-9<>-]+(?=\s*\=)|infl:'
       scope: entity.other.attribute-name
 
     # Comments begin with a $ or # and finish at the end of the line
-    - match: '\$|\#\D'
+    - match: '\$|#(?![0-9(]|all\b)'
       scope: comment
       push: line_comment
 
@@ -22,7 +22,7 @@ contexts:
     # strings in YAML. When using single quoted strings, only single quotes
     # need to be escaped: this is done by using two single quotes next to each
     # other.
-    - match: '\[ .+ \]'
+    - match: '\[(?!\d+\])[^]]+\]'
       scope: markup.heading punctuation.definition.heading
 
     # Particles and elements
