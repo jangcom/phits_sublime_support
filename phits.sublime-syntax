@@ -8,6 +8,7 @@ file_extensions:
   - out
   - ang
   - act
+  - dcs
 scope: input.phits
 contexts:
   main:
